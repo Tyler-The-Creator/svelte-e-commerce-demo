@@ -1,0 +1,18 @@
+/* Custom Pink version */
+
+// Override default variables
+$primary-500: #c93c13;
+$primary-600: #c93c13;
+$primary-700: #c93c13;
+
+
+// Import Pico
+@import "@picocss/pico/scss/pico";
+/* custom version */
+
+// theme
+@import "@picocss/pico/scss/themes/default";
+
+// import components you need
+@import "@picocss/pico/scss/content/button";
+@import "@picocss/pico/scss/content/form";
