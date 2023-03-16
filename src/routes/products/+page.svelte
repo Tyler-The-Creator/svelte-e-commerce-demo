@@ -1,8 +1,17 @@
 <script lang="ts">
   import "../../app.scss";
 
+  import { cart } from "../../store";
+
   export let data;
   const { products } = data;
+
+  const addProductToCart = (product) => {
+    cart.update((cart) => {
+        cart.products.push({ product });
+      return cart;
+    });
+  };
 </script>
 
 <svelte:head>
@@ -20,9 +29,11 @@
 <!--      <p>{product.description}</p>-->
       <p>${product.price.toFixed(2)}</p>
       <a href="/products/{product.id}" data-sveltekit-preload-data="tap">
-        <button class="add-to-cart">View</button>
+        <button
+          class="add-to-cart"
+        >View</button>
       </a>
-      <!--      <button class="add-to-cart" on:click={() => addToCart("Product 1")}>Add to Cart</button>-->
+            <button class="add-to-cart" on:click={() => addProductToCart(product)}>Add to Cart</button>
     </div>
   {/each}
 </div>
