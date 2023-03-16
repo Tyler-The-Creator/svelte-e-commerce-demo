@@ -10,8 +10,7 @@
   <ul>
     <li><strong>Zulzi</strong></li>
     <li><a href="/">Home</a></li>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/shop">Shop</a></li>
+    <li><a href="/products">Products</a></li>
     <li><a href="/cart">Cart</a></li>
   </ul>
 </nav>
