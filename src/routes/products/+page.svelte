@@ -7,6 +7,7 @@
   const { products } = data;
 
   const addProductToCart = (product) => {
+    alert(`Product ${product.title} added to cart`);
     cart.update((cart) => {
         cart.products.push({ product });
       return cart;
