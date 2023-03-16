@@ -13,7 +13,7 @@
 <div class="grid">
   {#each products as product}
     <div class="product">
-      <h3>{product.title}</h3>
+      <h4>{product.title}</h4>
       <picture>
         <img src={product.images[0]} alt="Welcome" class="product-image" />
       </picture>
