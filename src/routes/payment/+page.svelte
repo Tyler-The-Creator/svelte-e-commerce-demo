@@ -1,5 +1,8 @@
 <script lang="ts">
   import { cartTotal, resetCart } from "../../store";
+  let fullName = "";
+  let cardNumber = "";
+  let cvv = "";
 </script>
 
 <svelte:head>
@@ -9,11 +12,20 @@
 
 <div class="cardContainer">
   <div class="card">
-    <input type="text" placeholder="Full Name">
-    <input type="text" placeholder="Card Number">
-    <input type="text" placeholder="CVV">
+    <label>
+      Full Name
+      <input bind:value={fullName} placeholder="John Doe">
+    </label>
+    <label>
+      Card Number
+      <input bind:value={cardNumber} placeholder="1111 2222 3333 4444">
+    </label>
+    <label>
+      CVV
+      <input bind:value={cvv} placeholder="123">
+    </label>
     <button disabled={$cartTotal === 0} on:click={() => {
-      alert(`Paid R ${$cartTotal}`)
+      alert(`${fullName}\nPaid R ${$cartTotal}`)
       resetCart()
     }}>Pay R {$cartTotal}</button>
   </div>
