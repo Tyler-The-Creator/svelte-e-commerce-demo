@@ -1,17 +1,15 @@
 <script lang="ts">
   import "../../app.scss";
-
-  import { cart } from "../../store";
-
+  import { cart, calculateCartTotal, cartTotal } from "../../store";
   export let data;
   const { products } = data;
 
   const addProductToCart = (product) => {
-    alert(`Product ${product.title} added to cart`);
     cart.update((cart) => {
-        cart.products.push({ ...product });
+      cart.products.push({ ...product });
       return cart;
     });
+    $cartTotal = calculateCartTotal($cart);
   };
 </script>
 
@@ -27,19 +25,18 @@
       <picture>
         <img src={product.images[0]} alt="Welcome" class="product-image" />
       </picture>
-      <!--      <p>{product.description}</p>-->
-      <p>${product.price.toFixed(2)}</p>
+      <p>R {product.price.toFixed(2)}</p>
       <a href="/products/{product.id}" data-sveltekit-preload-data="tap">
         <button
           class="add-to-cart"
         >View
         </button>
       </a>
-      <button class="add-to-cart" on:click={() => addProductToCart(product)}>Add to Cart</button>
+      <button class="add-to-cart" on:click={() => addProductToCart(product)}>Add to Cart
+      </button>
     </div>
   {/each}
 </div>
-
 
 <style>
     p {
@@ -75,5 +72,6 @@
     .product-image {
         max-width: 100%;
         height: 50%;
+        border-radius: 10px;
     }
 </style>

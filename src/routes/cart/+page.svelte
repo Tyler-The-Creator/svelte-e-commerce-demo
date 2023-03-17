@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cart } from "../../store";
+  import { cart, cartTotal } from "../../store";
 </script>
 
 <svelte:head>
@@ -7,14 +7,20 @@
   <meta name="description" content="Cart page">
 </svelte:head>
 
+<h2>Cart Total: R{$cartTotal}</h2>
+<a href="/payment">
+  <button>Checkout</button>
+</a>
+
+
 <div class="grid">
-  {#each $cart.products as item}
+  {#each $cart.products as product}
     <div class="product">
-      <h4>{item.title}</h4>
+      <h4>{product.title}</h4>
       <picture>
-        <img src={item.images[0]} alt="Welcome" class="product-image" />
+        <img src={product.images[0]} alt="Welcome" class="product-image" />
       </picture>
-      <p>${item.price.toFixed(2)}</p>
+      <p>${product.price.toFixed(2)}</p>
     </div>
   {/each}
 </div>
