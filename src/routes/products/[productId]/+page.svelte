@@ -10,5 +10,5 @@
   </picture>
   <h4>{product.title}</h4>
   <p>{product.description}</p>
-  <p>${product.price.toFixed(2)}</p>
+  <p>R {product.price.toFixed(2)}</p>
 </div>

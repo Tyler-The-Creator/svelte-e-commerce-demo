@@ -21,7 +21,7 @@
       <picture>
         <img src={product.images[0]} alt="Welcome" class="product-image" />
       </picture>
-      <p>${product.price.toFixed(2)}</p>
+      <p>R {product.price.toFixed(2)}</p>
     </div>
   {/each}
 </div>
