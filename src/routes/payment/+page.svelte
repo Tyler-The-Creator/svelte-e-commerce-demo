@@ -25,8 +25,11 @@
       <input bind:value={cvv} placeholder="123">
     </label>
     <button disabled={$cartTotal === 0} on:click={() => {
-      alert(`${fullName}\nPaid R ${$cartTotal}`)
+      fullName = ""
+      cardNumber = ""
+      cvv = ""
       resetCart()
+      alert(`${fullName}\nPaid R ${$cartTotal}`)
     }}>Pay R {$cartTotal}</button>
   </div>
 </div>
