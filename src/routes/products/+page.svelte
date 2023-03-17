@@ -9,7 +9,7 @@
   const addProductToCart = (product) => {
     alert(`Product ${product.title} added to cart`);
     cart.update((cart) => {
-        cart.products.push({ product });
+        cart.products.push({ ...product });
       return cart;
     });
   };
@@ -27,14 +27,15 @@
       <picture>
         <img src={product.images[0]} alt="Welcome" class="product-image" />
       </picture>
-<!--      <p>{product.description}</p>-->
+      <!--      <p>{product.description}</p>-->
       <p>${product.price.toFixed(2)}</p>
       <a href="/products/{product.id}" data-sveltekit-preload-data="tap">
         <button
           class="add-to-cart"
-        >View</button>
+        >View
+        </button>
       </a>
-            <button class="add-to-cart" on:click={() => addProductToCart(product)}>Add to Cart</button>
+      <button class="add-to-cart" on:click={() => addProductToCart(product)}>Add to Cart</button>
     </div>
   {/each}
 </div>
@@ -44,6 +45,7 @@
     p {
         margin-top: 10px;
     }
+
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

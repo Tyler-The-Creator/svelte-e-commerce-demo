@@ -5,11 +5,11 @@
 <div class="grid">
   {#each $cart.products as item}
     <div class="product">
-      <h4>{item.product.title}</h4>
+      <h4>{item.title}</h4>
       <picture>
-        <img src={item.product.images[0]} alt="Welcome" class="product-image" />
+        <img src={item.images[0]} alt="Welcome" class="product-image" />
       </picture>
-      <p>${item.product.price.toFixed(2)}</p>
+      <p>${item.price.toFixed(2)}</p>
     </div>
   {/each}
 </div>
