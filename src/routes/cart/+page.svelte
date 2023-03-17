@@ -2,6 +2,11 @@
   import { cart } from "../../store";
 </script>
 
+<svelte:head>
+  <title>Cart</title>
+  <meta name="description" content="Cart page">
+</svelte:head>
+
 <div class="grid">
   {#each $cart.products as item}
     <div class="product">
@@ -18,6 +23,7 @@
     p {
         margin-top: 10px;
     }
+
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
