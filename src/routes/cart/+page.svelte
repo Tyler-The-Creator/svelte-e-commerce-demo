@@ -8,7 +8,7 @@
 </svelte:head>
 
 <div class="totalContainer">
-  <h2>Cart Total: R{$cartTotal}</h2>
+  <h2>Cart Total: R {$cartTotal}</h2>
   <a href="/payment">
     <button>Checkout</button>
   </a>
