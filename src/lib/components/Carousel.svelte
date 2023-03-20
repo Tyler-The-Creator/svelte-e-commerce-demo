@@ -9,13 +9,20 @@
   {#each products as product}
     <article>
       <div class="product">
-        <a href="/products/{product.id}" data-sveltekit-preload-data="tap">
+        <a
+          href="/products/{product.id}"
+          data-sveltekit-preload-data="tap"
+        >
           <picture>
             <img src={product.images[0]} alt="Welcome" class="product-image" />
           </picture>
           <div class="product-details">
-            <p class="product-price">R {product.price.toFixed(2)}</p>
-            <p class="product-title">{product.title}</p>
+            <p class="product-price">
+              R {product.price.toFixed(2).replace(".", ",")}
+            </p>
+            <p class="product-title">
+              {product.title}
+            </p>
           </div>
         </a>
         <button
