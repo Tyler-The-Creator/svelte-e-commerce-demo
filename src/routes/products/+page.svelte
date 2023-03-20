@@ -2,7 +2,7 @@
   import "../../app.scss";
   import { cart, calculateCartTotal, cartTotal } from "../../store";
 
-  import Carousel from "../../lib/components/carousel/Carousel.svelte";
+  import Carousel from "../../lib/components/Carousel.svelte";
 
   export let data;
   const { products } = data;

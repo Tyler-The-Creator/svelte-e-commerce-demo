@@ -1,27 +1,31 @@
 <script lang="ts">
+  import "../../app.scss";
+
   export let products: any;
   export let addProductToCart: any;
 </script>
 
 <div class="slider">
   {#each products as product}
-    <section>
+    <article>
       <div class="product">
-        <picture>
-          <img src={product.images[0]} alt="Welcome" class="product-image" />
-        </picture>
-        <p>{product.title}</p>
-        <p>R {product.price.toFixed(2)}</p>
         <a href="/products/{product.id}" data-sveltekit-preload-data="tap">
-          <button
-            class="add-to-cart"
-          >View
-          </button>
+          <picture>
+            <img src={product.images[0]} alt="Welcome" class="product-image" />
+          </picture>
+          <div class="product-details">
+            <p class="product-price">R {product.price.toFixed(2)}</p>
+            <p class="product-title">{product.title}</p>
+          </div>
         </a>
-        <button class="add-to-cart" on:click={() => addProductToCart(product)}>Add to Cart
+        <button
+          class="add-to-cart"
+          on:click={() => addProductToCart(product)}
+        >
+          Add to Cart
         </button>
       </div>
-    </section>
+    </article>
   {/each}
 </div>
 
@@ -34,40 +38,59 @@
 
     .slider {
         font-family: sans-serif;
-        /*scroll-snap-type: x mandatory;*/
         display: flex;
         -webkit-overflow-scrolling: touch;
         overflow-x: scroll;
         scrollbar-width: none;
     }
 
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
     .slider::-webkit-scrollbar {
         display: none;
     }
 
-    section {
-        padding: 1rem;
+    article {
+        margin: 10px;
+        border-radius: 10px;
         scroll-snap-align: start;
         text-align: center;
         position: relative;
     }
 
     p {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        color: black;
     }
 
     .product {
-        border: 1px solid grey;
         border-radius: 20px;
-        padding: 10px;
         text-align: center;
-        display: inline-block;
+        /*display: inline-block;*/
         margin: 10px;
-        width: 200px;
+        width: 150px;
+    }
+
+    .product-details {
+        margin-top: 10px;
+        color: black;
+        text-align: left;
+    }
+
+    .product-title {
+        font-size: 12px;
+        color: gray;
+    }
+
+    .product-price {
+        font-size: 18px;
+        font-weight: bold;
     }
 
     .add-to-cart {
+        position: relative;
         background-color: #C93C13;
         color: white;
         border: none;
@@ -78,8 +101,8 @@
     }
 
     .product-image {
-        max-width: 100%;
-        height: 200px;
+        max-width: 80%;
+        height: 100px;
         border-radius: 10px;
     }
 </style>
