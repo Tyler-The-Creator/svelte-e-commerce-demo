@@ -3,6 +3,7 @@
   import { cart, calculateCartTotal, cartTotal } from "../../store";
 
   import Carousel from "../../lib/components/Carousel.svelte";
+  import CategoryCard from "$lib/components/CategoryCard.svelte";
 
   export let data;
   const { products } = data;
@@ -22,6 +23,10 @@
 </svelte:head>
 
 <div class="container">
+  <CategoryCard
+    title="Fruits"
+    data={products}
+  />
 
   <Carousel
     title="Popular in your area"

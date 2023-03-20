@@ -11,6 +11,12 @@
 <div class="slider">
   {#each products as product}
     <article>
+      <div
+        class="plus-div"
+        on:click={() => addProductToCart(product)}
+      >
+        <span>+</span>
+      </div>
       <div class="product">
         <a
           href="/products/{product.id}"
@@ -28,12 +34,12 @@
             </p>
           </div>
         </a>
-        <button
-          class="add-to-cart"
-          on:click={() => addProductToCart(product)}
-        >
-          Add to Cart
-        </button>
+        <!--        <button-->
+        <!--          class="add-to-cart"-->
+        <!--          on:click={() => addProductToCart(product)}-->
+        <!--        >-->
+        <!--          Add to Cart-->
+        <!--        </button>-->
       </div>
     </article>
   {/each}
@@ -117,5 +123,19 @@
         max-width: 80%;
         height: 100px;
         border-radius: 10px;
+    }
+
+    .plus-div {
+        position: absolute;
+        border: 1px solid #c93c13;
+        border-radius: 15px;
+        background-color: white;
+        color: #C93C13;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
     }
 </style>
