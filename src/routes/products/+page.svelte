@@ -21,20 +21,23 @@
   <meta name="description" content="Products page">
 </svelte:head>
 
-<Carousel
-  title="Popular in your area"
-  products={products}
-  addProductToCart={addProductToCart}
-/>
+<div class="container">
 
-<Carousel
-  title="Bakery"
-  products={products}
-  addProductToCart={addProductToCart}
-/>
+  <Carousel
+    title="Popular in your area"
+    products={products}
+    addProductToCart={addProductToCart}
+  />
 
-<Carousel
-  title="Dairy"
-  products={products}
-  addProductToCart={addProductToCart}
-/>
+  <Carousel
+    title="Bakery"
+    products={products}
+    addProductToCart={addProductToCart}
+  />
+
+  <Carousel
+    title="Dairy"
+    products={products}
+    addProductToCart={addProductToCart}
+  />
+</div>
