@@ -1,10 +1,13 @@
 <script lang="ts">
   import "../../app.scss";
 
+  export let title: string;
   export let products: any;
   export let addProductToCart: any;
 </script>
 
+
+<h6>{title}</h6>
 <div class="slider">
   {#each products as product}
     <article>
@@ -37,6 +40,12 @@
 </div>
 
 <style>
+    h6 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 10px;
+    }
+
     * {
         box-sizing: border-box;
         margin: 0;
@@ -49,6 +58,7 @@
         -webkit-overflow-scrolling: touch;
         overflow-x: scroll;
         scrollbar-width: none;
+        margin-bottom: 10px;
     }
 
     a {
