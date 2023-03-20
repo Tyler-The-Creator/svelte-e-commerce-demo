@@ -68,21 +68,15 @@
         position: relative;
     }
 
-    p {
-        color: black;
-    }
-
     .product {
         border-radius: 20px;
         text-align: center;
-        /*display: inline-block;*/
         margin: 10px;
         width: 150px;
     }
 
     .product-details {
         margin-top: 10px;
-        color: black;
         text-align: left;
     }
 
@@ -92,8 +86,9 @@
     }
 
     .product-price {
+        color: black;
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 500;
     }
 
     .add-to-cart {
