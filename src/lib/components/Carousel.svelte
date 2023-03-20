@@ -127,7 +127,7 @@
 
     .plus-div {
         position: absolute;
-        border: 2px solid #c93c13;
+        border: 1px solid #c93c13;
         border-radius: 15px;
         font-weight: bold;
         background-color: white;
