@@ -110,6 +110,7 @@
         padding: 10px;
         cursor: pointer;
         margin-top: 10px;
+        font-weight: 500;
     }
 
     .product-image {
