@@ -2,8 +2,8 @@
   import "../../app.scss";
   import { cart, calculateCartTotal, cartTotal } from "../../store";
 
-  import Carousel from "../../lib/components/Carousel.svelte";
-  import CategoryCard from "$lib/components/CategoryCard.svelte";
+  import ProductCarousel from "../../lib/components/ProductCarousel.svelte";
+  import CategoryCarousel from "$lib/components/CategoryCarousel.svelte";
 
   export let data;
   const { products } = data;
@@ -23,24 +23,24 @@
 </svelte:head>
 
 <div class="container">
-  <CategoryCard
+  <CategoryCarousel
     title="Fruits"
     data={products}
   />
 
-  <Carousel
+  <ProductCarousel
     title="Popular in your area"
     products={products}
     addProductToCart={addProductToCart}
   />
 
-  <Carousel
+  <ProductCarousel
     title="Bakery"
     products={products}
     addProductToCart={addProductToCart}
   />
 
-  <Carousel
+  <ProductCarousel
     title="Dairy"
     products={products}
     addProductToCart={addProductToCart}
