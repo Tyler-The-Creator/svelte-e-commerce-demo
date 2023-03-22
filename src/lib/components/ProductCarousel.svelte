@@ -34,12 +34,6 @@
             </p>
           </div>
         </a>
-        <!--        <button-->
-        <!--          class="add-to-cart"-->
-        <!--          on:click={() => addProductToCart(product)}-->
-        <!--        >-->
-        <!--          Add to Cart-->
-        <!--        </button>-->
       </div>
     </article>
   {/each}
