@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cart, cartTotal } from "../../store";
+  import Button, { Label } from '@smui/button';
 </script>
 
 <svelte:head>
@@ -8,9 +9,11 @@
 </svelte:head>
 
 <div class="totalContainer">
-  <h2>Cart Total: R {$cartTotal}</h2>
+  <h2 style="color: black; font-family: Roboto, serif;">Cart Total: R {$cartTotal}</h2>
   <a href="/payment">
-    <button>Checkout</button>
+    <Button variant="raised" class="button-shaped-round">
+      <Label>Checkout</Label>
+    </Button>
   </a>
 </div>
 
@@ -30,11 +33,16 @@
     .totalContainer {
         display: flex;
         justify-content: space-between;
-        padding: 20px;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 20px;
     }
 
     p {
         margin-top: 10px;
+        color: #000;
+        font-family: Roboto,serif;
     }
 
     .grid {
@@ -71,5 +79,7 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+        font-family: Roboto,serif;
+        border-radius: 10px;
     }
 </style>

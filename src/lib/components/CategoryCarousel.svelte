@@ -1,10 +1,8 @@
 <script lang="ts">
-  import "../../app.scss";
-
   export let data: unknown;
 </script>
 
-<h6>Shop by Category</h6>
+<div class="mdc-typography--headline5 title">Shop by Category</div>
 <div class="slider">
   {#each data as item}
     <section>
@@ -28,10 +26,11 @@
 </div>
 
 <style>
-    h6 {
-        font-size: 18px;
-        font-weight: 500;
+    .title {
         margin-left: 10px;
+        margin-top: 10px;
+        font-family: Roboto,monospace;
+        color: black;
     }
 
     * {
@@ -76,7 +75,7 @@
 
     .category-title {
         font-size: 14px;
-        color: black;
+        color: gray;
     }
 
     .category-image {

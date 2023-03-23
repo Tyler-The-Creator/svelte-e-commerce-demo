@@ -1,13 +1,10 @@
 <script lang="ts">
-  import "../../app.scss";
-
   export let title: string;
   export let products: any;
   export let addProductToCart: any;
 </script>
 
-
-<h6>{title}</h6>
+<div class="mdc-typography--headline5 title">{title}</div>
 <div class="slider">
   {#each products as product}
     <article>
@@ -40,12 +37,6 @@
 </div>
 
 <style>
-    h6 {
-        font-size: 18px;
-        font-weight: 500;
-        margin-left: 10px;
-    }
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -72,6 +63,8 @@
 
     article {
         margin: 10px;
+        border-color: orange;
+        border-width: 2px;
         border-radius: 10px;
         scroll-snap-align: start;
         text-align: center;
@@ -96,22 +89,22 @@
     }
 
     .product-price {
-        color: black;
+        color: gray;
         font-size: 18px;
         font-weight: 500;
     }
 
-    .add-to-cart {
-        position: relative;
-        background-color: #C93C13;
-        color: white;
-        border: none;
-        border-radius: 15px;
-        padding: 10px;
-        cursor: pointer;
-        margin-top: 10px;
-        font-weight: 500;
-    }
+    /*.add-to-cart {*/
+    /*    position: relative;*/
+    /*    background-color: #C93C13;*/
+    /*    color: white;*/
+    /*    border: none;*/
+    /*    border-radius: 15px;*/
+    /*    padding: 10px;*/
+    /*    cursor: pointer;*/
+    /*    margin-top: 10px;*/
+    /*    font-weight: 500;*/
+    /*}*/
 
     .product-image {
         max-width: 80%;
@@ -132,5 +125,12 @@
         height: 30px;
         align-items: center;
         justify-content: center;
+    }
+
+    .title {
+        margin-left: 10px;
+        margin-top: 10px;
+        font-family: Roboto, monospace;
+        color: black;
     }
 </style>

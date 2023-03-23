@@ -10,12 +10,22 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"prepare": "npm run smui-theme-light && npm run smui-theme-dark",
+		"smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
+		"smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
+		"@grpc/grpc-js": "^1.8.12",
+		"@material/typography": "^14.0.0",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.28.1",
+		"@smui/button": "^7.0.0-beta.0",
+		"@smui/card": "^7.0.0-beta.0",
+		"@smui/icon-button": "^7.0.0-beta.0",
+		"@smui/image-list": "^7.0.0-beta.0",
+		"@smui/top-app-bar": "^7.0.0-beta.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@types/google-protobuf": "^3.15.6",
@@ -24,20 +34,17 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"google-protobuf": "^3.21.2",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"sass": "^1.59.3",
+		"smui-theme": "^7.0.0-beta.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
 		"vite": "^4.1.4",
-		"vitest": "^0.25.3",
-		"google-protobuf": "^3.21.2",
-		"@grpc/grpc-js": "^1.8.12"
+		"vitest": "^0.25.3"
 	},
-	"type": "module",
-	"dependencies": {
-		"@picocss/pico": "^1.5.7"
-	}
+	"type": "module"
 }

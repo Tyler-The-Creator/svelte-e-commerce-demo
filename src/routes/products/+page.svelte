@@ -45,4 +45,10 @@
     products={products}
     addProductToCart={addProductToCart}
   />
+
+  <ProductCarousel
+    title="Dairy"
+    products={products}
+    addProductToCart={addProductToCart}
+  />
 </div>

@@ -1,0 +1,30 @@
+@use 'sass:color';
+
+@use '@material/theme/color-palette';
+
+// Svelte Colors!
+@use '@material/theme/index' as theme with (
+  $primary: #c93c13,
+  $secondary: #676778,
+  $surface: #fff,
+  $background: #fff,
+  $error: color-palette.$red-900,
+);
+
+@import "@material/typography/mdc-typography";
+
+html,
+body {
+  background-color: theme.$surface;
+  color: theme.$on-surface;
+}
+
+a {
+  color: white;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+//a:visited {
+//  color: color.scale(white, $lightness: -35%);
+//}
